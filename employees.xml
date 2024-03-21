@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<employees><employee><name>ahmed ali</name><email>mohamedtrokey132@gmail.com</email><phone>874-239875-234</phone><address>Cairo</address></employee><employee><name>mohamed</name><email>mohamed@gmail.com</email><phone>0123232</phone><address>alex</address></employee></employees>
+<employees>
+    <employee>
+        <name>ahmed ali</name>
+        <email>mohamedtrokey132@gmail.com</email>
+        <phone>874-239875-234</phone>
+        <address>Cairo</address>
+    </employee>
+    <employee>
+        <name>mohamed</name>
+        <email>mohamed@gmail.com</email>
+        <phone>0123232</phone>
+        <address>alex</address>
+    </employee>
+    <employee>
+        <name>John Doe</name>
+        <email>johndoe@example.com</email>
+        <phone>555-1234</phone>
+        <address>New York</address>
+    </employee>
+</employees>
