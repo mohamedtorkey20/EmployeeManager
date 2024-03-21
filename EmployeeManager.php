@@ -62,7 +62,7 @@ class EmployeeManager {
         return $employees;
     }
 
-    public function updateEmployees($employees) {
+    public function updateEmployee($employees) {
         $this->dom = new DOMDocument('1.0', 'UTF-8');
         $root = $this->dom->createElement('employees');
         foreach ($employees as $employee) {
@@ -87,25 +87,26 @@ class EmployeeManager {
         $employees = $this->getEmployees();
         unset($employees[$index]);
         $employees = array_values($employees);
-        $this->updateEmployees($employees);
+        $this->updateEmployee($employees);
     }
 
     public function searchByName($name) {
         $employees = $this->getEmployees();
-        $matchingEmployees = [];
+        $index = -1;
     
-        foreach ($employees as $employee) {
+        foreach ($employees as $key=>$employee) {
             if (strpos(strtolower($employee['name']), strtolower($name)) !== false) {
-                $matchingEmployees[] = $employee;
+                $index = $key;
             }
         }
     
-        return $matchingEmployees;
+        return $index;
     }
     
-}
+
  
 
+}
 ?>
 
 

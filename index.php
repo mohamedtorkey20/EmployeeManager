@@ -38,8 +38,8 @@ if (isset($_POST['update'])) {
         'phone' => $phone,
         'address' => $address
     ];
-
-    $employeeManager->updateEmployees($employees);
+   
+    $employeeManager->updateEmployee($employees);
 }
 
 if (isset($_POST['delete'])) {
@@ -47,13 +47,18 @@ if (isset($_POST['delete'])) {
     $currentEmployeeIndex = 0;
 }
 
-if (isset($_POST['update'])) {
-  $name = $_POST['name'];
 
-  $employeeManager->searchByName($name);
+
+if(isset($_POST['search'])){
+    $name=$_POST['name'];
+    $currentEmployeeIndex= $employeeManager->searchByName($name);
+
 }
+
 $employees = $employeeManager->getEmployees();
-$currentEmployee = $employees[$currentEmployeeIndex] ?? null;
+$currentEmployee = $employees[$currentEmployeeIndex] ? $employees[$currentEmployeeIndex]: null;
+
+
 
 ?>
 
